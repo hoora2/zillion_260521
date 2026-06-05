@@ -3,19 +3,6 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<script>
-  /* 모바일: 데스크톱 레이아웃·비율을 유지한 채 페이지 전체를 기기 가로폭에 맞춰 축소.
-     (반응형 리플로우 대신 'fit-to-width' 방식 — 최초 로드 시 한 화면에 가로가 딱 맞음) */
-  (function () {
-    var vp = document.querySelector('meta[name="viewport"]');
-    var DESIGN_W = 1200;            // 데스크톱 기준 디자인 폭
-    var dw = window.innerWidth;     // 이 시점엔 viewport=device-width 라 실제 기기 폭
-    if (vp && dw < 820) {
-      vp.setAttribute('content', 'width=' + DESIGN_W);
-      document.documentElement.classList.add('fit-mobile');
-    }
-  })();
-</script>
 <title>방치형 RPG v0.1 — PD 관점 디벨롭 방향성 제안서</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -300,9 +287,6 @@ a:hover { text-decoration: underline; }
 @media (max-width: 1024px) {
   .main { zoom: 1 !important; }
 }
-/* 모바일 fit-to-width 모드: 디자인 폭(1200) 레이아웃을 기본 비율(zoom 1)로 깔끔하게 유지한 채
-   브라우저가 기기 가로폭에 맞춰 통째로 축소 (반응형 리플로우 아님) */
-html.fit-mobile .main { zoom: 1 !important; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -1178,6 +1162,34 @@ table td .pill.warn { background: var(--warn-soft); color: var(--warn); }
   .tl-month .tl-num { font-size: 28px; }
   .hero-vision-frame { grid-template-columns: 1fr; }
   .acc-body { padding: 4px 16px 18px 18px; }
+
+  /* ---- 옵션 C: 표만 가로 스크롤 (찌그러짐 방지), 본문은 자연 흐름 ---- */
+  .tbl-wrap {
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+  .tbl-wrap table { min-width: 560px; }   /* 칸이 찌그러지지 않게 최소폭 확보 → 넘치면 옆으로 스크롤 */
+  /* 스크롤 가능함을 알리는 오른쪽 페이드 힌트 */
+  .tbl-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 28px;
+    background: linear-gradient(90deg, transparent, var(--paper));
+    pointer-events: none;
+    opacity: 0.9;
+  }
+
+  /* 본문 가독성: 폰에서 글자 크기 유지 (축소 안 함) */
+  .section-intro { font-size: 17px; }
+  .vision { font-size: 22px !important; padding-left: 18px; }
+  .vision strong { font-size: 26px !important; }
+  .about-doc { padding: 18px 20px; }
+}
+
+/* 아주 좁은 폰(≤420px): 표 최소폭만 살짝 낮춰 스크롤 양 줄임 */
+@media (max-width: 420px) {
+  .tbl-wrap table { min-width: 480px; }
 }
 
 .sidebar-toggle { display: none; }
