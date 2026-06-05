@@ -1152,8 +1152,23 @@ table td .pill.warn { background: var(--warn-soft); color: var(--warn); }
     gap: 22px;
   }
   .main { padding: 32px 22px 100px; }
-  .section-head { grid-template-columns: 56px 1fr; gap: 14px; }
-  .section-num { font-size: 36px; }
+  .section-head {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    align-items: start;
+  }
+  .section-num {
+    font-size: 30px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    line-height: 1;
+  }
+  .section-num small {
+    display: inline;
+    margin-top: 0;
+    font-size: 11px;
+  }
   .status-block { grid-template-columns: 1fr; gap: 4px; }
   .status-block .label { padding-top: 0; }
   .numbered > li { grid-template-columns: 36px 1fr; gap: 14px; }
