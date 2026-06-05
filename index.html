@@ -330,6 +330,25 @@ a:hover { text-decoration: underline; }
 }
 .about-doc p + p { margin-top: 12px; }
 .about-doc strong { color: var(--ink); font-weight: 600; }
+.about-doc .about-note {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--ink-3);
+}
+.about-doc .about-note + .about-note {
+  margin-top: 8px;
+  padding-top: 0;
+  border-top: none;
+}
+.about-doc .about-note::before {
+  content: "\203B  ";
+  color: var(--accent);
+  font-weight: 600;
+}
+.about-doc .about-note strong { color: var(--accent); font-weight: 600; }
 
 .vision {
   font-family: var(--font-serif);
@@ -1220,11 +1239,13 @@ table td .pill.warn { background: var(--warn-soft); color: var(--warn); }
         <div class="about-label">About this document</div>
         <p>출시된 게임의 기획이 아니라, 주어진 <strong>1차 기획서(방치형 RPG v0.1)</strong>를 <strong>PD 관점에서 어떻게 디벨롭할지</strong> 정리한 방향성 제안서입니다. 실무형 기획 과제로 작성했으며, 현재는 제 <strong>의사결정 과정과 사고의 흐름</strong>을 보여주기 위한 <strong>포트폴리오</strong>로 정리했습니다.</p>
         <p>제공된 것은 핵심 메커니즘만 정의된 초기 기획서 한 부였습니다. 비어 있던 항목 — 2·3구역 설계, 핀볼 변동성 통제, 발사 패턴·러브샷, 메타·BM 레이어 — 을 직접 채우고, 리스크를 진단해 <strong>4개월 검증 로드맵</strong>까지 잡은 자기주도 결과물입니다.</p>
+        <p class="about-note">기반이 된 원본 기획서는 저작권이 출제 측에 있어 공개할 수 없습니다. 다만 문서를 이해하는 데 필요한 핵심 내용은 <strong>「1. 기획서 리딩」</strong>에 요약해두었습니다.</p>
+        <p class="about-note">개발 기간(4개월)·팀 구성(기획1·개발1·아트1)은 출제 측이 제시한 <strong>제약 조건</strong>이며, 본 문서는 그 범위 안에서의 우선순위 판단을 다룹니다.</p>
       </div>
 
       <dl class="hero-meta">
         <div><dt>작성자</dt><dd>김동후</dd></div>
-        <div><dt>대상 문서</dt><dd>방치형 RPG 기획 v0.1</dd></div>
+        <div><dt>기반 문서</dt><dd>방치형 RPG 기획 v0.1</dd></div>
         <div><dt>스펙</dt><dd>Unity · 모바일 · 4개월</dd></div>
         <div><dt>팀구성</dt><dd>기획1 · 개발1 · 아트1</dd></div>
       </dl>
