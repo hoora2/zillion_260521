@@ -306,6 +306,32 @@ a:hover { text-decoration: underline; }
   color: var(--accent);
   font-weight: 500;
 }
+.about-doc {
+  max-width: 760px;
+  margin: 28px 0 40px;
+  padding: 22px 26px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.about-doc .about-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.about-doc p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ink-2);
+}
+.about-doc p + p { margin-top: 12px; }
+.about-doc strong { color: var(--ink); font-weight: 600; }
+
 .vision {
   font-family: var(--font-serif);
   font-size: clamp(22px, 1.7vw, 28px);
@@ -1149,6 +1175,7 @@ table td .pill.warn { background: var(--warn-soft); color: var(--warn); }
 
     <div class="sidebar-inner">
       <div>
+        <img src="data:image/webp;base64,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" class="sidebar-logo" alt="Zillion Games" style="display:block; width:100%; height:auto; margin-bottom:16px; opacity:0.9;" />
         <div class="brand">PD 관점에서의 디벨롭 방향성</div>
         <div class="brand-title">방치형 RPG v0.1</div>
         <div class="brand-meta">김동후 · 2026·05·21</div>
@@ -1185,8 +1212,14 @@ table td .pill.warn { background: var(--warn-soft); color: var(--warn); }
 
     <!-- ====================== HERO ====================== -->
     <header class="hero section" id="s-vision" data-title="00 · 한 줄 비전">
-      <div class="hero-tag">PD PERSPECTIVE·2026.05.21</div>
+      <div class="hero-tag">PD PERSPECTIVE · V4 · 2026.05.21</div>
       <h1>방치형 RPG <span class="em">v0.1</span><br/>디벨롭 방향성</h1>
+
+      <div class="about-doc">
+        <div class="about-label">About this document</div>
+        <p>출시된 게임의 기획이 아니라, 주어진 <strong>1차 기획서(방치형 RPG v0.1)</strong>를 <strong>PD 관점에서 어떻게 디벨롭할지</strong> 정리한 방향성 제안서입니다. 실무형 기획 과제로 작성했으며, 현재는 제 의사결정 과정과 사고의 흐름을 보여주기 위한 <strong>포트폴리오</strong>로 정리했습니다.</p>
+        <p>제공된 것은 핵심 메커니즘만 정의된 초기 기획서 한 부. 비어 있던 항목 — 2·3구역 설계, 핀볼 변동성 통제, 발사 패턴·러브샷, 메타·BM 레이어 — 의 기획/개발 방향성을 채우고, 초기 기획서 기준 리스크를 진단해 <strong>4개월 검증 로드맵</strong>까지 잡은 자기주도 결과물입니다.</p>
+      </div>
 
       <p class="vision" style="font-size: 28px"><strong style="font-size: 36px">"사로잡는 것은 핀볼의 카타르시스,<br/>유지하는 것은 매니지먼트의 깊이."</strong><br/>— 30초는 핀볼이, 30일은 매니지먼트가 책임진다.</p>
 
@@ -1239,7 +1272,7 @@ table td .pill.warn { background: var(--warn-soft); color: var(--warn); }
         <li>
           <div>
             <h4>충돌 기반 액션</h4>
-            <p>유닛이 벽에 충돌하면 일반 공격이, 충돌이 N번 누적되면 특수 스킬이 발동. <em>"핀볼을 잘 튕길수록 스킬이 자주 터진다"</em> 는 메커니즘 고유의 자원 시스템 — 충돌 횟수 자체가 일종의 "스택"처럼 작동.</p>
+            <p>유닛이 벽에 충돌하면 일반 공격이, 충돌이 N번 누적되면 특수 스킬이 발동. <em>"핀볼을 잘 튕길수록 스킬이 자주 터진다"</em> 는 메커니즘 고유의 자원 시스템 — 충돌 횟수 자체가 일종의 "마나"처럼 작동.</p>
           </div>
         </li>
         <li>
@@ -1947,8 +1980,8 @@ table td .pill.warn { background: var(--warn-soft); color: var(--warn); }
 
         <div class="callout note">
           <div class="callout-label">BM (수익모델) 잠정안</div>
-          <p style="margin: 0; font-family: var(--font-serif); font-size: 18px;"><strong>소프트 런칭: 광고 70% + 뽑기 30% | 라이브 안착 후 : 광고 60% + 뽑기 30% + 패스 10% </strong></p>
-          <p style="margin: 8px 0 0; font-size: 13.5px; color: var(--ink-2);">패스는 라이브 이관이지만 초기 운영 시점에 빠르게 추가될 예정. BM 비중은 4개월차 검증 후 실제 유저 행동 데이터를 보고 조정.</p>
+          <p style="margin: 0; font-family: var(--font-serif); font-size: 18px;"><strong>광고 60% + 뽑기 30% + 패스 10%</strong></p>
+          <p style="margin: 8px 0 0; font-size: 13.5px; color: var(--ink-2);">패스는 라이브 이관이지만 초기 운영 시점에 가장 먼저 추가될 예정이므로 잠정 비중에는 포함. 4개월차 검증 후 실제 유저 행동 데이터를 보고 조정.</p>
         </div>
 
         <details class="acc">
@@ -2146,7 +2179,7 @@ table td .pill.warn { background: var(--warn-soft); color: var(--warn); }
               <li><strong>전사 QA 진행</strong> — 팀 외부 인원이 빌드를 만져 발견되는 버그·UX 이슈 정리</li>
               <li>폴리싱 작업 (애니메이션·이펙트·사운드)</li>
             </ul>
-            <div class="tl-hyp"><span class="tl-hyp-label">검증할 가설</span>광고-뽑기 BM이 초기 ARPDAU 목표를 만드는가? D7 리텐션 20% 이상을 만들 수 있는가?</div>
+            <div class="tl-hyp"><span class="tl-hyp-label">검증할 가설</span>광고-뽑기 BM이 초기 ARPDAU 목표를 만드는가? D7 리텐션 30% 이상을 만들 수 있는가?</div>
           </div>
         </div>
       </div>
@@ -2349,7 +2382,7 @@ table td .pill.warn { background: var(--warn-soft); color: var(--warn); }
 
     <footer class="doc-footer">
       <span>방치형 RPG v0.1 — PD 디벨롭 방향성</span>
-      <span>김동후 · 2026·05·21</span>
+      <span>김동후 · 2026·05·21 · V4</span>
     </footer>
 
   </main>
@@ -2423,6 +2456,14 @@ table td .pill.warn { background: var(--warn-soft); color: var(--warn); }
     </div>
 
     <div class="tw-section">
+      <div class="tw-label">로고</div>
+      <div class="tw-row" data-tw="logo">
+        <button class="tw-pick" data-val="show">표시</button>
+        <button class="tw-pick" data-val="hide">숨김</button>
+      </div>
+    </div>
+
+    <div class="tw-section">
       <div class="tw-label">섹션 페이드인</div>
       <div class="tw-row" data-tw="fade">
         <button class="tw-pick" data-val="on">켜기</button>
@@ -2450,7 +2491,8 @@ table td .pill.warn { background: var(--warn-soft); color: var(--warn); }
     "size": "XL",
     "density": 1.0,
     "fold": "closed",
-    "fade": "on"
+    "fade": "on",
+    "logo": "hide"
   }/*EDITMODE-END*/;
 
   const state = { ...TWEAK_DEFAULTS };
@@ -2496,6 +2538,10 @@ table td .pill.warn { background: var(--warn-soft); color: var(--warn); }
 
     // Density
     root.style.setProperty("--density", String(state.density));
+
+    // Logo show/hide
+    const logoEl = document.querySelector('.sidebar-logo');
+    if (logoEl) logoEl.style.display = (state.logo === 'hide') ? 'none' : 'block';
 
     // Fade
     if (state.fade === "off") {
